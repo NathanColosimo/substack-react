@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "registry:build": "shadcn build",
-    "substack-client:test": "tsx --env-file=.env.local registry/client/client-test.ts"
+    "registry:build": "shadcn build"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
