@@ -7,7 +7,7 @@ import {
   ItemActions,
 } from "@/components/ui/item";
 import { Button } from "@/components/ui/button";
-import { Post } from "../client/types/posts";
+import { Post } from "../client/post-types";
 import { ExternalLink } from "lucide-react";
 
 type PostCardDisplayProps = {

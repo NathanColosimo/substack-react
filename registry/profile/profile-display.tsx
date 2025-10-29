@@ -8,7 +8,7 @@ import {
   ItemHeader,
 } from "@/components/ui/item";
 import { Button } from "@/components/ui/button";
-import { Profile } from "../client/types/profile";
+import { Profile } from "../client/profile-types";
 import { ExternalLink } from "lucide-react";
 
 type ProfileDisplayProps = {
