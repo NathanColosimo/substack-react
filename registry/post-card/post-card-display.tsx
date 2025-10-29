@@ -1,4 +1,3 @@
-import { FullPost } from "substack-api";
 import {
   Item,
   ItemContent,
@@ -8,19 +7,19 @@ import {
   ItemActions,
 } from "@/components/ui/item";
 import { Button } from "@/components/ui/button";
+import { Post } from "../client/types/posts";
 
 type PostCardDisplayProps = {
-  post: FullPost;
+  post: Post;
 };
 
 export default function PostCardDisplay(props: PostCardDisplayProps) {
   const post = props.post;
-  console.log(post);
   return (
     <Item variant="default">
-      {post.coverImage && (
+      {post.cover_image && (
         <ItemMedia variant="image">
-          <img src={post.coverImage} alt={post.title} width={200} />
+          <img src={post.cover_image} alt={post.title} width={200} />
         </ItemMedia>
       )}
       <ItemContent className="gap-1.5">
