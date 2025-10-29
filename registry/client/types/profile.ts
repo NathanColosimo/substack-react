@@ -69,7 +69,7 @@ const theme = z.object({
   cover_image: coverImage,
 })
 
-export const SubstackProfileSchema = z.object({
+export const ProfileSchema = z.object({
   publicationUsers: z.array(PublicationUser),
   userLinks: z.array(UserLink),
   primaryPublication: PublicationSchema,
@@ -82,4 +82,4 @@ export const SubstackProfileSchema = z.object({
   Author.shape,
 );
 
-export type SubstackProfile = z.infer<typeof SubstackProfileSchema>;
+export type Profile = z.infer<typeof ProfileSchema>;
