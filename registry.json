@@ -11,11 +11,11 @@
       "dependencies": ["zod"],
       "files": [
         {
-          "path": "registry/client/post-types.ts",
+          "path": "registry/lib/post-types.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/client/posts.ts",
+          "path": "registry/lib/posts.ts",
           "type": "registry:lib"
         }
       ]
@@ -28,11 +28,11 @@
       "dependencies": ["zod"],
       "files": [
         {
-          "path": "registry/client/profile-types.ts",
+          "path": "registry/lib/profile-types.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/client/profile.ts",
+          "path": "registry/lib/profile.ts",
           "type": "registry:lib"
         }
       ]

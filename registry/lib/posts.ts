@@ -1,4 +1,4 @@
-import { UserPostListSchema, Post, PostResponseSchema, PublicationPostListSchema } from "./post-types";
+import { UserPostListSchema, Post, PostResponseSchema, PublicationPostListSchema } from "@/lib/post-types";
 import { z } from "zod";
 
 export async function userPostsForId(id: number, opts?: {

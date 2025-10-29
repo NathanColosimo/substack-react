@@ -1,5 +1,5 @@
 import z from "zod";
-import { PublicationSchema } from "./profile-types";
+import { PublicationSchema } from "@/lib/profile-types";
 
 const audioItem = z.object({
   post_id: z.number(),

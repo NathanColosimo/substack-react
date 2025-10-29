@@ -1,8 +1,7 @@
 import * as React from "react"
-import PostList from "@/registry/post-list/post-list"
-import PostCard from "@/registry/post-card/post-card"
-import { ProfileDisplay } from "@/registry/profile/profile-display"
-import { Profile } from "@/registry/profile/profile"
+import PostList from "@/components/post-list"
+import PostCard from "@/components/post-card"
+import Profile from "@/components/profile"
 
 export default function Home() {
   return (

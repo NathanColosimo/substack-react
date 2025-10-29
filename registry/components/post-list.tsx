@@ -1,8 +1,8 @@
-import PostCardDisplay from "../post-card/post-card-display";
+import PostCardDisplay from "@/components/post-card-display";
 import { ItemGroup, ItemSeparator } from "@/components/ui/item";
 import React from "react";
-import { profileForHandle } from "../client/profile";
-import { userPostsForId } from "../client/posts";
+import { profileForHandle } from "@/lib/profile";
+import { userPostsForId } from "@/lib/posts";
 
 type PostListProps = {
   profileHandle: string;

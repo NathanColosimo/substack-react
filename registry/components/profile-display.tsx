@@ -8,14 +8,14 @@ import {
   ItemHeader,
 } from "@/components/ui/item";
 import { Button } from "@/components/ui/button";
-import { Profile } from "../client/profile-types";
+import { Profile } from "@/lib/profile-types";
 import { ExternalLink } from "lucide-react";
 
 type ProfileDisplayProps = {
   profile: Profile;
 };
 
-export function ProfileDisplay(props: ProfileDisplayProps) {
+export default function ProfileDisplay(props: ProfileDisplayProps) {
   const profile = props.profile;
   const coverImageURL = profile.theme?.cover_image.url;
   return (

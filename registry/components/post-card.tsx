@@ -1,5 +1,5 @@
-import PostCardDisplay from "./post-card-display";
-import { postForId } from "../client/posts";
+import PostCardDisplay from "@/components/post-card-display";
+import { postForId } from "@/lib/posts";
 
 type PostCardProps = {
   postId: number;
