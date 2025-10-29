@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "post-list",
+  "type": "registry:component",
+  "title": "Post List",
+  "description": "Post List for displaying a list of posts",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "item",
+    "button",
+    "http://localhost:3000/r/post-card-display.json",
+    "http://localhost:3000/r/profile-utils.json"
+  ],
+  "files": [
+    {
+      "path": "registry/components/post-list.tsx",
+      "content": "import PostCardDisplay from \"@/components/post-card-display\";\nimport { ItemGroup, ItemSeparator } from \"@/components/ui/item\";\nimport React from \"react\";\nimport { profileForHandle } from \"@/lib/profile\";\nimport { userPostsForId } from \"@/lib/posts\";\n\ntype PostListProps = {\n  profileHandle: string;\n};\n\nexport default async function PostList(props: PostListProps) {\n  const profile = await profileForHandle(props.profileHandle);\n\n  const postList = await userPostsForId(profile.id, { limit: 10 });\n\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-6\">\n      <ItemGroup>\n        {postList.map((post, index) => {\n          return (\n            <React.Fragment key={post.id}>\n              <PostCardDisplay post={post} />\n              {index !== postList.length - 1 && <ItemSeparator className=\"my-4\" />}\n            </React.Fragment>\n          );\n        })}\n      </ItemGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

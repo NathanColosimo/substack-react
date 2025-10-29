@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "post-card-display",
+  "type": "registry:component",
+  "title": "Post Card Display",
+  "description": "Post Card Display for displaying a post",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "item",
+    "button",
+    "http://localhost:3000/r/post-utils.json"
+  ],
+  "files": [
+    {
+      "path": "registry/components/post-card-display.tsx",
+      "content": "import {\n  Item,\n  ItemContent,\n  ItemDescription,\n  ItemTitle,\n  ItemMedia,\n  ItemActions,\n} from \"@/components/ui/item\";\nimport { Button } from \"@/components/ui/button\";\nimport { Post } from \"@/lib/post-types\";\nimport { ExternalLink } from \"lucide-react\";\n\ntype PostCardDisplayProps = {\n  post: Post;\n};\n\nexport default function PostCardDisplay(props: PostCardDisplayProps) {\n  const post = props.post;\n  return (\n    <Item variant=\"default\">\n      {post.cover_image && (\n        <ItemMedia variant=\"image\">\n          <img src={post.cover_image} alt={post.title} width={200} />\n        </ItemMedia>\n      )}\n      <ItemContent className=\"gap-1.5\">\n        <ItemTitle>{props.post.title}</ItemTitle>\n        <ItemDescription>{props.post.subtitle}</ItemDescription>\n      </ItemContent>\n      <ItemActions>\n        <Button variant=\"outline\" asChild>\n          <a href={post.canonical_url} target=\"_blank\" rel=\"noreferrer\">\n            <ExternalLink className=\"w-4 h-4\" />\n            </a>\n        </Button>\n      </ItemActions>\n    </Item>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

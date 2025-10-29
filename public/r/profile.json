@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile",
+  "type": "registry:component",
+  "title": "Profile",
+  "description": "Profile for displaying a profile",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "item",
+    "button",
+    "http://localhost:3000/r/profile-display.json"
+  ],
+  "files": [
+    {
+      "path": "registry/components/profile.tsx",
+      "content": "import { profileForHandle } from \"@/lib/profile\"\nimport ProfileDisplay from \"@/components/profile-display\";\n\ntype ProfileProps = {\n    handle: string\n}\n\nexport default async function Profile(props: ProfileProps) {\n    const profile = await profileForHandle(props.handle);\n    return <ProfileDisplay profile={profile}></ProfileDisplay>\n}",
+      "type": "registry:component"
+    }
+  ]
+}

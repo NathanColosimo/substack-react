@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-display",
+  "type": "registry:component",
+  "title": "Profile Display",
+  "description": "Profile Display for displaying a profile",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "item",
+    "button",
+    "http://localhost:3000/r/profile-utils.json"
+  ],
+  "files": [
+    {
+      "path": "registry/components/profile-display.tsx",
+      "content": "import {\n  Item,\n  ItemMedia,\n  ItemContent,\n  ItemTitle,\n  ItemDescription,\n  ItemActions,\n  ItemHeader,\n} from \"@/components/ui/item\";\nimport { Button } from \"@/components/ui/button\";\nimport { Profile } from \"@/lib/profile-types\";\nimport { ExternalLink } from \"lucide-react\";\n\ntype ProfileDisplayProps = {\n  profile: Profile;\n};\n\nexport default function ProfileDisplay(props: ProfileDisplayProps) {\n  const profile = props.profile;\n  const coverImageURL = profile.theme?.cover_image.url;\n  return (\n    <Item variant=\"default\">\n      {coverImageURL && (\n        <ItemHeader>\n          <img src={coverImageURL} alt={`${profile.name} cover image`} className=\"rounded-md\"/>\n        </ItemHeader>\n      )}\n      {profile.photo_url && (\n        <ItemMedia variant=\"image\">\n          <img src={profile.photo_url} alt={profile.name} width={200} />\n        </ItemMedia>\n      )}\n      <ItemContent className=\"gap-1.5\">\n        <ItemTitle>{profile.name}</ItemTitle>\n        <ItemDescription>{profile.bio}</ItemDescription>\n      </ItemContent>\n      <ItemActions>\n        <Button variant=\"outline\" asChild>\n          <a\n            href={`https://substack.com/@${profile.handle}`}\n            target=\"_blank\"\n            rel=\"noreferrer\"\n          >\n            <ExternalLink className=\"w-4 h-4\" />\n          </a>\n        </Button>\n      </ItemActions>\n    </Item>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

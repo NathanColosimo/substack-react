@@ -11,12 +11,54 @@
       "dependencies": ["zod"],
       "files": [
         {
-          "path": "registry/client/post-types.ts",
+          "path": "registry/lib/post-types.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/client/posts.ts",
+          "path": "registry/lib/posts.ts",
           "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "post-card-display",
+      "type": "registry:component",
+      "title": "Post Card Display",
+      "description": "Post Card Display for displaying a post",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["item", "button", "http://localhost:3000/r/post-utils.json"],
+      "files": [
+        {
+          "path": "registry/components/post-card-display.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "post-card",
+      "type": "registry:component",
+      "title": "Post Card",
+      "description": "Post Card for displaying a post",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["item", "button", "http://localhost:3000/r/post-card-display.json"],
+      "files": [
+        {
+          "path": "registry/components/post-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "post-list",
+      "type": "registry:component",
+      "title": "Post List",
+      "description": "Post List for displaying a list of posts",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["item", "button", "http://localhost:3000/r/post-card-display.json", "http://localhost:3000/r/profile-utils.json"],
+      "files": [
+        {
+          "path": "registry/components/post-list.tsx",
+          "type": "registry:component"
         }
       ]
     },
@@ -28,12 +70,40 @@
       "dependencies": ["zod"],
       "files": [
         {
-          "path": "registry/client/profile-types.ts",
+          "path": "registry/lib/profile-types.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/client/profile.ts",
+          "path": "registry/lib/profile.ts",
           "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "profile-display",
+      "type": "registry:component",
+      "title": "Profile Display",
+      "description": "Profile Display for displaying a profile",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["item", "button", "http://localhost:3000/r/profile-utils.json"],
+      "files": [
+        {
+          "path": "registry/components/profile-display.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "type": "registry:component",
+      "title": "Profile",
+      "description": "Profile for displaying a profile",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["item", "button", "http://localhost:3000/r/profile-display.json"],
+      "files": [
+        {
+          "path": "registry/components/profile.tsx",
+          "type": "registry:component"
         }
       ]
     }

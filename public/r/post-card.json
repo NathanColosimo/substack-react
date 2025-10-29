@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "post-card",
+  "type": "registry:component",
+  "title": "Post Card",
+  "description": "Post Card for displaying a post",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "item",
+    "button",
+    "http://localhost:3000/r/post-card-display.json"
+  ],
+  "files": [
+    {
+      "path": "registry/components/post-card.tsx",
+      "content": "import PostCardDisplay from \"@/components/post-card-display\";\nimport { postForId } from \"@/lib/posts\";\n\ntype PostCardProps = {\n  postId: number;\n};\n\nexport default async function PostCard(props: PostCardProps) {\n  const post = await postForId(props.postId);\n  return <PostCardDisplay post={post} />;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
