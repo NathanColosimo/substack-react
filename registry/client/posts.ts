@@ -1,21 +1,20 @@
-import { UserPostListSchema, UserPostList, Post, PostSchema, PostResponseSchema, PublicationPostList, PublicationPostListSchema } from "./types/posts";
+import { UserPostListSchema, Post, PostResponseSchema, PublicationPostListSchema } from "./types/posts";
 import { z } from "zod";
 
 export async function userPostsForId(id: number, opts?: {
     offset?: number,
     limit?: number
-}): Promise<UserPostList> {
+}): Promise<Post[]> {
     const offset = opts?.offset ? `&offset=${opts?.offset}` : "";
     const limit = opts?.limit ? `&limit=${opts.limit}` : "";
     const response = await fetch(`https://substack.com/api/v1/profile/posts?profile_user_id=${id}${offset}${limit}`);
     const data = await response.json();
-    return UserPostListSchema.parse(data);
+    return UserPostListSchema.parse(data).posts;
 }
 
 export async function postForId(id: number): Promise<Post> {
     const response = await fetch(`https://substack.com/api/v1/posts/by-id/${id}`);
     const data = await response.json();
-    console.log(data);
     return PostResponseSchema.parse(data).post;
 }
 
@@ -23,7 +22,7 @@ export async function publicationPostsForURL(url: string, opts?: {
     sort?: "new" | "top",
     offset?: number,
     limit?: number
-}): Promise<PublicationPostList> {
+}): Promise<Post[]> {
     const urlParsed = z.url().safeParse(url);
     if (!urlParsed.success) {
         throw new Error("Invalid URL");
@@ -38,7 +37,6 @@ export async function publicationPostsForURL(url: string, opts?: {
     }
     const response = await fetch(`${urlParsed.data}/api/v1/archive?sort=${sort}${offset}${limit}`);
     const data = await response.json();
-    console.log(data);
     return PublicationPostListSchema.parse(data);
 }
 

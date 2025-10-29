@@ -1,7 +1,6 @@
 import PostCardDisplay from "../post-card/post-card-display";
 import { ItemGroup, ItemSeparator } from "@/components/ui/item";
 import React from "react";
-import { SubstackProfile } from "../client/types/profile";
 import { profileForHandle } from "../client/profile";
 import { userPostsForId } from "../client/posts";
 
@@ -17,11 +16,11 @@ export default async function PostList(props: PostListProps) {
   return (
     <div className="flex w-full max-w-md flex-col gap-6">
       <ItemGroup>
-        {postList.posts.map((post, index) => {
+        {postList.map((post, index) => {
           return (
             <React.Fragment key={post.id}>
               <PostCardDisplay post={post} />
-              {index !== postList.posts.length - 1 && <ItemSeparator className="my-4" />}
+              {index !== postList.length - 1 && <ItemSeparator className="my-4" />}
             </React.Fragment>
           );
         })}

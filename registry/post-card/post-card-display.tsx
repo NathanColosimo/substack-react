@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/item";
 import { Button } from "@/components/ui/button";
 import { Post } from "../client/types/posts";
+import { ExternalLink } from "lucide-react";
 
 type PostCardDisplayProps = {
   post: Post;
@@ -27,7 +28,11 @@ export default function PostCardDisplay(props: PostCardDisplayProps) {
         <ItemDescription>{props.post.subtitle}</ItemDescription>
       </ItemContent>
       <ItemActions>
-        <Button variant="outline">Action</Button>
+        <Button variant="outline" asChild>
+          <a href={post.canonical_url} target="_blank" rel="noreferrer">
+            <ExternalLink className="w-4 h-4" />
+            </a>
+        </Button>
       </ItemActions>
     </Item>
   );

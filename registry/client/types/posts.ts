@@ -44,8 +44,4 @@ export const UserPostListSchema = z.object({
     posts: z.array(PostSchema)
 });
 
-export type UserPostList = z.infer<typeof UserPostListSchema>;
-
 export const PublicationPostListSchema = z.array(PostSchema);
-
-export type PublicationPostList = z.infer<typeof PublicationPostListSchema>;
