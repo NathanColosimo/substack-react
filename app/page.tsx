@@ -137,7 +137,7 @@ export default async function Home() {
     {
       name: "Post & Profile Utils",
       summary:
-        "Zod-backed fetch helpers for posts, publications, and profile metadata.",
+        "Fetch() and Zod based helpers for posts, publications, and profile metadata. Able to be used either server OR client side.",
     },
   ] as const;
 
