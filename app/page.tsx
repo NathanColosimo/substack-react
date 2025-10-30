@@ -1,7 +1,7 @@
-import PostList from "@/components/post-list"
-import PostCard from "@/components/post-card"
-import Profile from "@/components/profile"
-import SnippetTemplate from "./base"
+import PostList from "@/components/post-list";
+import PostCard from "@/components/post-card";
+import Profile from "@/components/profile";
+import SnippetTemplate from "./base";
 
 export default function Home() {
   const POST_LIST_SNIPPET = [
@@ -38,18 +38,49 @@ export default function Home() {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
+    <div className="max-w-6xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
       <header className="flex flex-col gap-1">
-        <h1 className="text-3xl font-bold tracking-tight">Custom Registry</h1>
+        <h1 className="text-3xl font-bold tracking-tight">
+          Substack React Registry
+        </h1>
         <p className="text-muted-foreground">
-          A custom registry for distributing code using shadcn.
+          A registry for displaying Substack posts and profiles, built with
+          React and Shadcn.
         </p>
+        <p className="text-muted-foreground">
+          Use the snippets below to add the components to your project.
+        </p>
+        <p className="text-muted-foreground">
+          For more information, see the{" "}
+          <a
+            href="https://github.com/nathancolosimo/substack-react"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            GitHub repository
+          </a>
+          .
+        </p>
+        <br />
+        <strong>Simple features and design:</strong>
+        <ul>
+          <li>
+            - Fetch-based api and zod-based validation for server & client
+            compatability, no abstracted api or npm packages.
+          </li>
+          <li>- Customizable components based on Shadcn UI components.</li>
+          <li>
+            - Minimal dependencies, just shadcn, lucide-react, and zod. Easily
+            replaceable with your own icons or validators.
+          </li>
+        </ul>
       </header>
       <main className="flex flex-col flex-1 gap-8">
         <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
           <div className="flex items-center justify-between">
             <h2 className="text-sm text-muted-foreground sm:pl-3">
-              Posts from Nathan Colosimo
+              {"Posts from Nathan Colosimo - <PostList profileHandle=\"nathancolosimo\" />"}
             </h2>
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
@@ -61,7 +92,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
           <div className="flex items-center justify-between">
             <h2 className="text-sm text-muted-foreground sm:pl-3">
-              Post from Nathan Colosimo
+              {"Post from Nathan Colosimo - <PostCard postId={150198789} />"}
             </h2>
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
@@ -73,7 +104,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
           <div className="flex items-center justify-between">
             <h2 className="text-sm text-muted-foreground sm:pl-3">
-              Nathan Colosimo Profile
+              {"Nathan Colosimo Profile - <Profile handle=\"nathancolosimo\" />"}
             </h2>
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
@@ -83,5 +114,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  )
+  );
 }
