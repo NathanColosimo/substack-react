@@ -35,7 +35,7 @@ export async function publicationPostsForURL(url: string, opts?: {
     if (opts?.limit && (opts?.limit > 50 || opts?.limit < 1)) {
         throw new Error("Limit must be between 1 and 50");
     }
-    console.log(`${urlParsed.data}/api/v1/archive?sort=${sort}${offset}${limit}`);
+    
     const response = await fetch(`${urlParsed.data}/api/v1/archive?sort=${sort}${offset}${limit}`);
     const data = await response.json();
     return PublicationPostListSchema.parse(data);
