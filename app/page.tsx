@@ -2,8 +2,11 @@ import PostList from "@/components/post-list";
 import PostCard from "@/components/post-card";
 import Profile from "@/components/profile";
 import SnippetTemplate from "./base";
+import { cacheLife } from "next/cache";
 
-export default function Home() {
+export default async function Home() {
+  'use cache';
+  cacheLife("days");
   const POST_LIST_SNIPPET = [
     {
       label: "pnpm",
