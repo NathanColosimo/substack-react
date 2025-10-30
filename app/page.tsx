@@ -187,8 +187,8 @@ async function loadPosts() {
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
             Minimal primitives for Substack content in React.
           </h1>
-          <p className="max-w-2xl text-sm text-muted-foreground">
-            Built with the Shadcn component model and Zod validation so you can wire up Substack posts,publications, and profiles without bespoke SDKs. Install only what you need using the snippets below, or explore the full registry on
+          <p className="max-w-4xl text-sm text-muted-foreground">
+            Built with the Shadcn component model and Zod validation so you can wire up Substack posts, publications, and profiles without bespoke SDKs. Install only what you need using the snippets below, or explore the full registry on
             <a
               className="ml-1 underline"
               href="https://github.com/nathancolosimo/substack-react"
@@ -219,9 +219,9 @@ async function loadPosts() {
       <main className="flex flex-col gap-10 pb-10">
         <DemoSection
           commands={POST_LIST_SNIPPET}
-          description="Async server component that pulls the latest Substack posts for a handle and renders them with Item primitives."
-          helper="Tip: Pair with Post Utils to hydrate list views on the server or in RSC routes."
-          title="PostList"
+          description="Server (or client!) component that pulls the latest Substack posts for a handle and renders them with ShadcnItem primitives."
+          helper="profileHandle needs to bea public Substack handle for a profile, NOT a publication."
+          title="<PostList profileHandle='nathancolosimo' />"
         >
           <Suspense fallback={<div>Loading...</div>}>
             <PostList profileHandle="nathancolosimo" />
@@ -231,8 +231,8 @@ async function loadPosts() {
         <DemoSection
           commands={POST_CARD_SNIPPET}
           description="Look up a single post by id and display it using the shared PostCardDisplay layout."
-          helper="Pass any integer Substack post id, or prefetch the post and use PostCardDisplay directly."
-          title="PostCard"
+          helper="Pass any integer Substack post id, or fetch the post in a different way and use PostCardDisplay directly."
+          title="<PostCard postId={150198789} />"
         >
           <Suspense fallback={<div>Loading...</div>}>
             <PostCard postId={150198789} />
@@ -243,7 +243,7 @@ async function loadPosts() {
           commands={PROFILE_SNIPPET}
           description="Resolve a public Substack handle and present a card layout with cover, avatar, and link actions."
           helper="Need finer control? Install ProfileDisplay for a presentation-only version."
-          title="Profile"
+          title="<Profile handle='nathancolosimo' />"
         >
           <Suspense fallback={<div>Loading...</div>}>
             <Profile handle="nathancolosimo" />
@@ -256,8 +256,7 @@ async function loadPosts() {
               Backend utilities
             </h2>
             <p className="text-sm text-muted-foreground">
-              These helpers mirror the `registry.json` entries for `post-utils`
-              and `profile-utils`. Each function performs a fetch to Substack
+              These helpers perform a fetch to Substack
               and validates the payload with Zod so downstream components
               receive typed data.
             </p>
