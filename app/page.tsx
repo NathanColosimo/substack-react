@@ -5,6 +5,7 @@ import CodeSample from "../components/utils-code-block";
 import type { ReactNode } from "react";
 import SnippetTemplate from "./base";
 import { Suspense } from "react";
+import { cacheLife } from "next/cache";
 
 type DemoSectionProps = {
   /**
@@ -50,6 +51,8 @@ function DemoSection(props: DemoSectionProps) {
 }
 
 export default async function Home() {
+  'use cache';
+  cacheLife("days");
   const POST_LIST_SNIPPET = [
     {
       label: "pnpm",
