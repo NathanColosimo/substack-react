@@ -44,7 +44,7 @@ export default async function Home() {
     <div className="max-w-6xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
       <header className="flex flex-col gap-1">
         <h1 className="text-3xl font-bold tracking-tight">
-          Substack React Registry
+          Substack React Registry, by <a href="https://nathancolosimo.com" target="_blank" rel="noopener noreferrer" className="underline">Nathan Colosimo</a>
         </h1>
         <p className="text-muted-foreground">
           A registry for displaying Substack posts and profiles, built with
@@ -61,7 +61,7 @@ export default async function Home() {
             rel="noopener noreferrer"
             className="underline"
           >
-            GitHub repository
+            GitHub repo
           </a>
           .
         </p>
