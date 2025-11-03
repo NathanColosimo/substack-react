@@ -26,7 +26,7 @@
       "title": "Post Card Display",
       "description": "Post Card Display for displaying a post",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["item", "button", "http://localhost:3000/r/post-utils.json"],
+      "registryDependencies": ["item", "button", "https://substack-react.nathancolosimo.com/r/post-utils.json"],
       "files": [
         {
           "path": "registry/components/post-card-display.tsx",
@@ -40,7 +40,7 @@
       "title": "Post Card",
       "description": "Post Card for displaying a post",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["item", "button", "http://localhost:3000/r/post-card-display.json"],
+      "registryDependencies": ["item", "button", "https://substack-react.nathancolosimo.com/r/post-card-display.json"],
       "files": [
         {
           "path": "registry/components/post-card.tsx",
@@ -54,7 +54,7 @@
       "title": "Post List",
       "description": "Post List for displaying a list of posts",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["item", "button", "http://localhost:3000/r/post-card-display.json", "http://localhost:3000/r/profile-utils.json"],
+      "registryDependencies": ["item", "button", "https://substack-react.nathancolosimo.com/r/post-card-display.json", "https://substack-react.nathancolosimo.com/r/profile-utils.json"],
       "files": [
         {
           "path": "registry/components/post-list.tsx",
@@ -85,7 +85,7 @@
       "title": "Profile Display",
       "description": "Profile Display for displaying a profile",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["item", "button", "http://localhost:3000/r/profile-utils.json"],
+      "registryDependencies": ["item", "button", "https://substack-react.nathancolosimo.com/r/profile-utils.json"],
       "files": [
         {
           "path": "registry/components/profile-display.tsx",
@@ -99,7 +99,7 @@
       "title": "Profile",
       "description": "Profile for displaying a profile",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["item", "button", "http://localhost:3000/r/profile-display.json"],
+      "registryDependencies": ["item", "button", "https://substack-react.nathancolosimo.com/r/profile-display.json"],
       "files": [
         {
           "path": "registry/components/profile.tsx",

@@ -10,7 +10,7 @@
   "registryDependencies": [
     "item",
     "button",
-    "http://localhost:3000/r/post-card-display.json"
+    "https://substack-react.nathancolosimo.com/r/post-card-display.json"
   ],
   "files": [
     {

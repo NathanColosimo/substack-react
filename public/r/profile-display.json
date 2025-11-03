@@ -10,7 +10,7 @@
   "registryDependencies": [
     "item",
     "button",
-    "http://localhost:3000/r/profile-utils.json"
+    "https://substack-react.nathancolosimo.com/r/profile-utils.json"
   ],
   "files": [
     {
