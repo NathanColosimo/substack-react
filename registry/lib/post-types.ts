@@ -17,7 +17,7 @@ export const PostSchema = z.object({
   publication_id: z.number(),
   title: z.string(),
   slug: z.string(),
-  post_date: z.string(),
+  post_date: z.iso.datetime(),
   canonical_url: z.string(),
   type: z.union([
     z.literal("newsletter"),

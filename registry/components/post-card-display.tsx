@@ -16,6 +16,10 @@ type PostCardDisplayProps = {
 
 export default function PostCardDisplay(props: PostCardDisplayProps) {
   const post = props.post;
+  const postDate = new Date(post.post_date);
+  const month = postDate.toLocaleString('default', { month: 'short' });
+  const year = postDate.getFullYear();
+  const postString = `${month} ${year}`;
   return (
     <Item variant="default">
       {post.cover_image && (
@@ -24,8 +28,11 @@ export default function PostCardDisplay(props: PostCardDisplayProps) {
         </ItemMedia>
       )}
       <ItemContent className="gap-1.5">
-        <ItemTitle>{props.post.title}</ItemTitle>
-        <ItemDescription>{props.post.subtitle}</ItemDescription>
+        <ItemTitle>{post.title}</ItemTitle>
+        <ItemDescription>{post.subtitle}</ItemDescription>
+      </ItemContent>
+      <ItemContent className="flex-none text-center">
+        <ItemDescription>{postString}</ItemDescription>
       </ItemContent>
       <ItemActions>
         <Button variant="outline" asChild>
